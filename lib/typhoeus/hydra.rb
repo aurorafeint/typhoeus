@@ -95,7 +95,6 @@ module Typhoeus
       @multi.perform
     ensure
       @multi.reset_easy_handles{|easy| release_easy_object(easy)}
-      @multi.cleanup
       @memoized_requests = {}
       @retrieved_from_cache = {}
       @running_requests = 0
